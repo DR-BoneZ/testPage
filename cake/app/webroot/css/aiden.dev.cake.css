@@ -19,8 +19,8 @@
     width: 100%;
 }
 .goat-background {
-    min-height: 600px;
-    min-width: 900px;
+    min-height: 720px;
+    min-width: 1280px;
     background: url(/cake/img/goats-med.jpg);
     background-size: 100% 100%;
     background-repeat: no-repeat;
