@@ -40,7 +40,7 @@ function quarterHash($quarter)
                 $this->request->data['Course']['quarterID'] = quarterHash($this->request->data['Course']['quarter']);
                 if ($this->Course->save($this->request->data)) 
                 {
-                    $this->Session->setFlash(__('Your course has been saved.'));
+                    $this->Session->setFlash('Your course has been saved.', 'flash_success');
                     return $this->redirect(array('action'=>'index'));
                 }
                 $this->Session->setFlash(__('Unable to add your course.'));
@@ -60,7 +60,7 @@ function quarterHash($quarter)
                 $courseData = $this->request->data['Course'];
                 if ($this->Course->updateAll(array('Course.courseID'=>"'".$courseData['courseID']."'",'Course.quarter'=>"'".$courseData['quarter']."'",'Course.courseTitle'=>"'".$courseData['courseTitle']."'", 'Course.times'=>"'".$courseData['times']."'", 'Course.credits'=>"'".$courseData['credits']."'", 'Course.quarterID'=>"'".$courseData['quarterID']."'"), array('Course.courseID'=>$cid,'Course.quarter'=>$qtr)))
                 {
-                    $this->Session->setFlash(__('Your course has been updated.'));
+                    $this->Session->setFlash('Your course has been updated.', 'flash_success');
                     return $this->redirect(array('action'=>'index'));
                 }
                 $this->Session->setFlash(__('Unable to update your course.'));
@@ -74,7 +74,7 @@ function quarterHash($quarter)
         {
             $this->layout = 'home';
             $this->Course->query("DELETE FROM courses WHERE courseID = '$cid' AND quarter = '$qtr';");
-            $this->Session->setFlash(__('The course has been deleted.'));
+            $this->Session->setFlash('The course has been deleted.', 'flash_success');
             return $this->redirect(array('action'=>'index'));
         }
     }
