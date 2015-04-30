@@ -1,0 +1,41 @@
+.padded-50-73 {
+    padding-top: 50px;
+    padding-bottom: 73px;
+}
+.padded-10 {
+    padding-top: 10px;
+}
+.centered {
+    text-align: center;
+}
+.no-margin {
+    margin: 0px;
+}
+.no-padding {
+    padding: 0px;
+}
+.full-size {
+    height: 100%;
+    width: 100%;
+}
+.goat-background {
+    min-height: 600px;
+    min-width: 900px;
+    background: url(/cake/img/goats-med.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.profile-img {
+    border-style: solid;
+    border-width: 4px;
+    border-color: #3c3c3c;
+    width: 150px;
+    height: 150px;
+}
+.thumb-300-200 {
+    height: 200px;
+    width: 300px;
+}
+.white {
+    color: #ffffff;
+}
