@@ -9,7 +9,7 @@
       $courseTitle = $_POST['courseTitle'];
       $times = ($_POST['Mo'] ? 'M':'').($_POST['Tu'] ? 'Tu':'').($_POST['We'] ? 'W':'').($_POST['Th'] ? 'Th':'').($_POST['Fr'] ? 'F':'')." ".$_POST['startTime']." - ".$_POST['endTime'];
       $credits = $_POST['credits'];
-      $sql = "INSERT INTO classes VALUES ('".$quarter."', '".$courseID."', '".$courseTitle."', '".$times."', ".$credits.");";
+      $sql = "INSERT INTO courses VALUES ('".$quarter."', '".$courseID."', '".$courseTitle."', '".$times."', ".$credits.");";
       mysqli_query($conn, "USE aiden_dev;");
       mysqli_query($conn, $sql);
       mysqli_close($conn);
@@ -20,7 +20,7 @@
          die("Connection failed: ".mysqli_connect_error());
       $quarter = explode(":", $_POST['remove'])[0];
       $courseID = explode(":", $_POST['remove'])[1];
-      $sql = "DELETE FROM classes WHERE quarter = '".$quarter."' AND courseID = '".$courseID."';";
+      $sql = "DELETE FROM courses WHERE quarter = '".$quarter."' AND courseID = '".$courseID."';";
       mysqli_query($conn, "USE aiden_dev;");
       mysqli_query($conn, $sql);
       mysqli_close($conn);

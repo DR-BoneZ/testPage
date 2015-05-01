@@ -29,7 +29,7 @@ function quarterHash($quarter)
         public function index() 
         {
             $this->layout = 'home';
-            $this->set('courses', $this->Course->find('all', array('order'=>'quarterID ASC, courseID ASC')));
+            $this->set('courses', $this->Course->find('all', array('order'=>'quarterID DESC, courseID ASC')));
         }
         public function add() 
         {

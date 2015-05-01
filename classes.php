@@ -2,7 +2,7 @@
    <div class="container target">
       <div class="row" style="padding-top: 10px;">
          <div class="col-sm-10">
-            <h1>My Classes</h1>
+            <h1>My Courses</h1>
          </div>
          <div class="col-sm-2 text-right"><h1></h1>
             <?php
@@ -19,7 +19,7 @@
          if (!$conn)
             die("Connection Failed: ".mysqli_connect_error());
          function listQuarter($quarter, $conn) {
-            $sql = "SELECT * FROM classes WHERE quarter = '".$quarter."' ORDER BY ".(array_key_exists('orderby', $_GET) ? $_GET['orderby'].', ' : '')."courseID ASC;";
+            $sql = "SELECT * FROM courses WHERE quarter = '".$quarter."' ORDER BY ".(array_key_exists('orderby', $_GET) ? $_GET['orderby'].', ' : '')."courseID ASC;";
             $result = mysqli_query($conn, $sql);
             if ($result->num_rows > 0) {
                echo '      <div class="row" style="padding-top: 5px;">
@@ -53,7 +53,7 @@
          </div>';
             }
          }
-         $result = mysqli_query($conn, "SELECT quarter FROM classes WHERE quarter LIKE 'Senior Q%' ORDER BY quarter DESC;");
+         $result = mysqli_query($conn, "SELECT quarter FROM courses WHERE quarter LIKE 'Senior Q%' ORDER BY quarter DESC;");
          if ($result->num_rows > 0) {
             $prevQuarter = '';
             while ($row = $result->fetch_assoc()) {
@@ -62,7 +62,7 @@
                $prevQuarter = $row['quarter'];
             }
          }
-         $result = mysqli_query($conn, "SELECT quarter FROM classes WHERE quarter LIKE 'Junior Q%' ORDER BY quarter DESC;");
+         $result = mysqli_query($conn, "SELECT quarter FROM courses WHERE quarter LIKE 'Junior Q%' ORDER BY quarter DESC;");
          if ($result->num_rows > 0) {
             $prevQuarter = '';
             while ($row = $result->fetch_assoc()) {
@@ -71,7 +71,7 @@
                $prevQuarter = $row['quarter'];
             }
          }
-         $result = mysqli_query($conn, "SELECT quarter FROM classes WHERE quarter LIKE 'Sophomore Q%' ORDER BY quarter DESC;");
+         $result = mysqli_query($conn, "SELECT quarter FROM courses WHERE quarter LIKE 'Sophomore Q%' ORDER BY quarter DESC;");
          if ($result->num_rows > 0) {
             $prevQuarter = '';
             while ($row = $result->fetch_assoc()) {
@@ -80,7 +80,7 @@
                $prevQuarter = $row['quarter'];
             }
          }
-         $result = mysqli_query($conn, "SELECT quarter FROM classes WHERE quarter LIKE 'Freshman Q%' ORDER BY quarter DESC;");
+         $result = mysqli_query($conn, "SELECT quarter FROM courses WHERE quarter LIKE 'Freshman Q%' ORDER BY quarter DESC;");
          if ($result->num_rows > 0) {
             $prevQuarter = '';
             while ($row = $result->fetch_assoc()) {
@@ -93,7 +93,7 @@
       <div class="row" style="padding-top: 10px; display: <?php echo !array_key_exists('edit', $_GET) || $_GET['edit'] != 'true' ? 'true' : 'none';?>;">
          <div class="col-sm-12">
             <div class="panel panel-default">
-               <div class="panel-heading">Add Class</div>
+               <div class="panel-heading">Add Course</div>
                <div class="panel-body">
                   <form action="classes.php?add=true" method="POST">
                      <div class="form-group">
