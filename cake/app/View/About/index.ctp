@@ -8,8 +8,8 @@
         </div>
     </div>
     <div class="row padded-10">
-        <div class="col-sm-3">
-            <ul class="list-group">
+        <div class="col-sm-3 no-margin no-padding">
+            <ul class="list-group no-margin no-padding">
                 <li class="list-group-item text-muted">Profile</li>
                 <li class="list-group-item text-right"><span class="pull-left"><strong>Name</strong></span> Aiden McClelland</li>
                 <li class="list-group-item text-right"><span class="pull-left"><strong>Major</strong></span> Computer Science</li>
