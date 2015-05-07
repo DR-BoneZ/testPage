@@ -5,6 +5,9 @@
 .padded-10 {
     padding-top: 10px;
 }
+.margin-12x {
+    margin: 12px;
+}
 .centered {
     text-align: center;
 }

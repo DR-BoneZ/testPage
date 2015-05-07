@@ -15,6 +15,15 @@
                 <li class="list-group-item text-right"><span class="pull-left"><strong>Major</strong></span> Computer Science</li>
                 <li class="list-group-item text-right"><span class="pull-left"><strong>Year</strong></span> Freshman - Q3</li>
             </ul>
+            <?php foreach ($tweets['statuses'] as $tweet): ?>
+                <div class="panel panel-default margin-12x">
+                    <div class="panel-heading">
+                        <?php echo $tweet['user']['name']; ?>
+                        <span class="text-muted">@<?php echo $tweet['user']['screen_name']; ?></span>
+                    </div>
+                    <div class="panel-body"><?php echo $tweet['text']; ?></div>
+                </div>
+            <?php endforeach; ?>
         </div>
         <div class="col-sm-9">
             <div class="panel panel-default">
