@@ -18,8 +18,9 @@
             <?php foreach ($tweets['statuses'] as $tweet): ?>
                 <div class="panel panel-default margin-12x">
                     <div class="panel-heading">
-                        <?php echo $tweet['user']['name']; ?>
-                        <span class="text-muted">@<?php echo $tweet['user']['screen_name']; ?></span>
+                        <a href="https://twitter.com/<?php echo $tweet['user']['screen_name']; ?>"><img class="twitter-avatar" src="<?php echo $tweet['user']['profile_image_url']; ?>" /></a>
+                        <a href="https://twitter.com/<?php echo $tweet['user']['screen_name']; ?>"><?php echo $tweet['user']['name']; ?></a>
+                        <a href="https://twitter.com/<?php echo $tweet['user']['screen_name']; ?>" class="text-muted">@<?php echo $tweet['user']['screen_name']; ?></a>
                     </div>
                     <div class="panel-body"><?php echo $tweet['text']; ?></div>
                 </div>

@@ -39,6 +39,11 @@
     height: 200px;
     width: 300px;
 }
+.twitter-avatar {
+    height: 36px;
+    width: 36px;
+    margin-right: 5px;
+}
 .white {
     color: #ffffff;
 }
