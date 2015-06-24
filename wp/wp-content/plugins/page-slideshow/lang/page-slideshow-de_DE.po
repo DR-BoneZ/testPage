@@ -1,0 +1,7 @@
+#: PageSlideshow.php:88
+msgid "Choose or Upload"
+msgstr "Bild wählen oder hochladen"
+
+#: PageSlideshow.php:89
+msgid "Apply Image"
+msgstr "Bild verwenden"

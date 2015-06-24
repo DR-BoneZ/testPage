@@ -15,16 +15,34 @@
                 <li class="list-group-item text-right"><span class="pull-left"><strong>Major</strong></span> Computer Science</li>
                 <li class="list-group-item text-right"><span class="pull-left"><strong>Year</strong></span> Freshman - Q3</li>
             </ul>
-            <?php foreach ($tweets['statuses'] as $tweet): ?>
-                <div class="panel panel-default margin-12x">
-                    <div class="panel-heading">
-                        <a href="https://twitter.com/<?php echo $tweet['user']['screen_name']; ?>"><img class="twitter-avatar" src="<?php echo $tweet['user']['profile_image_url']; ?>" /></a>
-                        <a href="https://twitter.com/<?php echo $tweet['user']['screen_name']; ?>"><?php echo $tweet['user']['name']; ?></a>
-                        <a href="https://twitter.com/<?php echo $tweet['user']['screen_name']; ?>" class="text-muted">@<?php echo $tweet['user']['screen_name']; ?></a>
-                    </div>
-                    <div class="panel-body"><?php echo $tweet['text']; ?></div>
+            <div class="panel panel-default no-padding margin-12x">
+                <div class="panel-heading">
+                    Tweets
                 </div>
-            <?php endforeach; ?>
+                <div class="panel-body no-padding scroll-425">
+                    <?php foreach ($tweets['statuses'] as $tweet): ?>
+                        <div class="panel panel-default margin-12x">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        <a href="https://twitter.com/<?php echo $tweet['user']['screen_name']; ?>"><img class="twitter-avatar" src="<?php echo $tweet['user']['profile_image_url']; ?>" /></a>
+                                    </div>
+                                    <div class="col-sm-10">
+                                        <a href="https://twitter.com/<?php echo $tweet['user']['screen_name']; ?>"><?php echo $tweet['user']['name']; ?></a><br />
+                                        <a href="https://twitter.com/<?php echo $tweet['user']['screen_name']; ?>" class="text-muted">@<?php echo $tweet['user']['screen_name']; ?></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <?php echo $tweet['text']; ?><br />
+                                <?php if (array_key_exists('media', $tweet['entities']) && count($tweet['entities']['media']) > 0) { foreach ($tweet['entities']['media'] as $media): ?>
+                                    <a href="<?php echo $media['url']; ?>"><img class="fit-width" src="<?php echo $media['media_url']; ?>" /></a>
+                                <?php endforeach; } ?>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
         </div>
         <div class="col-sm-9">
             <div class="panel panel-default">
